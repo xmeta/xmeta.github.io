@@ -101,7 +101,7 @@ activate :deploy do |deploy|
   deploy.method = :git
   deploy.remote = 'git@github.com:xmeta/xmeta.github.io.git'
   deploy.branch = 'master'
-  #deploy.clean = true
+  deploy.clean = true
 end
 
 activate :directory_indexes

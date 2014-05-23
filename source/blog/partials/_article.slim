@@ -17,7 +17,7 @@ article.panel
     p.readmore
       = link_to 'Read more →', article.url, :class => 'secondary button radius'
   - unless article.tags.empty?
-    div.tags
+    div.tag-container
       ul.inline-list
         - article.tags.each do |tag|
           li.tag

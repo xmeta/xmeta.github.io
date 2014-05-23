@@ -1,4 +1,4 @@
-# Middleman by Lifepillar
+# Middleman Blog
 
 This is a [Middleman](http://middlemanapp.com) template I have built for myself.
 It has support for:

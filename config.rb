@@ -100,7 +100,7 @@ page "/blog/feed.xml", :layout => false
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.remote = 'origin'
-  deploy.branch = 'gh-pages'
+  deploy.branch = 'master'
   deploy.clean = true
 end
 

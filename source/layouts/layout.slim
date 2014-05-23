@@ -14,7 +14,6 @@ html.no-js[lang="en"]
     - if content_for?(:head)
       = yield_content :head
   body.page_classes
-    = partial "/partials/sample_warning"
     - unless current_page.data.beginbody.nil?
       - for p in current_page.data.beginbody
         = partial "/partials/#{p}"

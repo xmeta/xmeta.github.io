@@ -15,7 +15,7 @@
         ul.left
           - data.main_menu.each do |item|
             li
-              a href="#{item.link}" = item.title
+              = link_to item.title, item.link
         ul.right
           li.search
             form
@@ -29,53 +29,39 @@
       #featured
         ul[data-orbit]
           li
-            |  <img src="
-            = lorem.image('1000x400', :text => 'Slide Image 1')
-            | " alt="slide image"> 
+            = image_tag lorem.image('1000x400', :text => 'Slide Image 1'), :alt => "slide image"
             .orbit-caption
               | Here goes a caption
           li
-            |  <img src="
-            = lorem.image('1000x400', :text => 'Slide Image 2')
-            | " alt="slide image"> 
+            = image_tag lorem.image('1000x400', :text => 'Slide Image 2'), :alt => "slide image"
             .orbit-caption
               | Here goes another caption
           li
-            |  <img src="
-            = lorem.image('1000x400', :text => 'Slide Image 3')
-            | " alt="slide image"> 
+            = image_tag lorem.image('1000x400', :text => 'Slide Image 3'), :alt => "slide image"
             .orbit-caption
               | Yet another caption
     .row
       .small-12.show-for-small
         br
-        img[src="http://placehold.it/1000x600&text=For Small Screens"]
+        = image_tag "http://placehold.it/1000x600&text=For Small Screens"
 br
 .row
   .large-12.columns
     .row
       .large-3.small-6.columns
-        |  <img src="
-        = lorem.image('250x250', :text => 'Thumbnail')
-        | " alt="thumbnail"> 
+        = image_tag lorem.image('250x250', :text => 'Thumbnail'), :alt => "thumbnail"
         h6.panel
           | Description
       .large-3.small-6.columns
-        |  <img src="
-        = lorem.image('250x250', :text => 'Thumbnail')
-        | " alt="thumbnail"> 
+        = image_tag lorem.image('250x250', :text => 'Thumbnail'), :alt => "thumbnail"
         h6.panel
           | Description
       .large-3.small-6.columns
-        |  <img src="
-        = lorem.image('250x250', :text => 'Thumbnail')
-        | " alt="thumbnail"> 
+        = image_tag lorem.image('250x250', :text => 'Thumbnail'), :alt => "thumbnail"
         h6.panel
           | Description
       .large-3.small-6.columns
-        |  <img src="
-        = lorem.image('250x250', :text => 'Thumbnail')
-        | " alt="thumbnail"> 
+        = image_tag lorem.image('250x250', :text => 'Thumbnail'), :alt => "thumbnail"
         h6.panel
           | Description
 .row
@@ -109,4 +95,4 @@ br
         a.large.button.expand[href="#"]
           i.fa.fa-quote-left
           |  Call To Action! 
-= partial '/partials/sample_footer'
+= partial '/partials/footer'

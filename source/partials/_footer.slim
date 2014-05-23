@@ -9,7 +9,4 @@ footer.row
         ul.inline-list.right
           - data.footer_links.each do |item|
             li
-              | <a href="
-              = item.link
-              | ">
-              = item.title
+              = link_to item.title, item.link

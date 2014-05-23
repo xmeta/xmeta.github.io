@@ -1,0 +1,10 @@
+---
+layout: article_wrapper
+pageable: true
+per_page: 4
+---
+
+- page_articles.each do |article|
+  = partial '/blog/partials/article', :locals => {:article => article, :digest => true}
+= partial '/blog/partials/pagination', \
+  :locals => { :paginate => paginate, :next_page => next_page, :prev_page => prev_page, :num_pages => num_pages, :page_number => page_number}

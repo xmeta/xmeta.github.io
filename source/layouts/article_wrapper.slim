@@ -1,0 +1,29 @@
+= wrap_layout :layout do
+  / Nav Bar
+  .row
+    .large-12.columns
+      .nav-bar.right
+        ul.button-group
+          li
+            a.button[href="/"]
+              = data.site.name
+          - data.main_menu.each do |item|
+            li
+              a.button href="#{item.link}"
+                = item.title
+      h1
+        = data.blog.name
+        small
+          = data.blog.slogan
+      a.right[href="/blog/feed.xml"]
+        i.fa.fa-rss
+      hr
+  / End Nav
+  
+  / Main Blog Content
+  .row
+    .large-9.columns[role="content"]
+      = yield
+    aside.large-3.columns
+      = partial '/blog/partials/sidebar'
+  = partial '/partials/sample_footer'

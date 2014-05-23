@@ -1,0 +1,35 @@
+article.panel
+  h3
+    - if digest
+      = link_to article.title, article
+    - else
+      = article.title
+  h6
+    |  Posted on <time datetime="#{article.date.strftime('%Y-%m-%d')}">
+    = article.date.strftime('%A %b %e, %Y')
+    |  by 
+    = link_to "#{article.data.author || data.blog.author}", data.blog.contact_url
+  - if digest
+    = article.summary
+  - else
+    = article.body
+  - if digest && article.summary.length < article.body.length
+    p.readmore
+      = link_to 'Read more →', article.url, :class => 'secondary button radius'
+  - unless article.tags.empty?
+    div.tags
+      ul.inline-list
+        - article.tags.each do |tag|
+          li.tag
+            = link_to tag, tag_path(tag)
+  - unless digest
+    - if article.previous_article or article.next_article
+      ul.read_next
+        li
+          - if article.previous_article
+            i.fa.fa-caret-left
+            = link_to article.previous_article.title, article.previous_article.url
+        li
+          - if article.next_article
+              = link_to article.next_article.title, article.next_article.url
+              i.fa.fa-caret-right

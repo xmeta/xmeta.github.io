@@ -1,0 +1,27 @@
+doctype html
+html.no-js[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title
+      = data.page.title || data.site.name
+    = stylesheet_link_tag "main"
+    = javascript_include_tag  "modernizr"
+    = favicon_tag 'favicon.png'
+    - unless current_page.data.head.nil?
+      - for p in current_page.data.head
+        = partial "/partials/#{p}"
+    - if content_for?(:head)
+      = yield_content :head
+  body.page_classes
+    = partial "/partials/sample_warning"
+    - unless current_page.data.beginbody.nil?
+      - for p in current_page.data.beginbody
+        = partial "/partials/#{p}"
+    = yield
+    = javascript_include_tag "foundation"
+    - unless current_page.data.endbody.nil?
+      - for p in current_page.data.endbody
+        = partial "/partials/#{p}"
+    - if content_for?(:end_body)
+      = yield_content :end_body

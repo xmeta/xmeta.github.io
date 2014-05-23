@@ -1,7 +1,7 @@
 require 'kramdown'
 
 set :markdown_engine, :kramdown
-set :md, :layout_engine => :erb, :auto_ids => false
+set :md, :layout_engine => :slim, :auto_ids => false
 
 ###
 # Compass
@@ -99,9 +99,9 @@ page "/blog/feed.xml", :layout => false
 # Middleman Deploy
 activate :deploy do |deploy|
   deploy.method = :git
-  deploy.remote = 'origin'
+  deploy.remote = 'git@github.com:xmeta/xmeta.github.io.git'
   deploy.branch = 'master'
-  deploy.clean = true
+  #deploy.clean = true
 end
 
 activate :directory_indexes

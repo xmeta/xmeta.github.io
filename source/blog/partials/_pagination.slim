@@ -3,7 +3,9 @@
     ul.pagination
       - if prev_page
         li class="arrow#{prev_page.nil? ? ' unavailable' : ''}"
-          = link_to '« Prev', prev_page.url
+          a href=prev_page.url
+            i.fa.fa-step-backward
+            |  Prev
       - (1..num_pages).each do |i|
         - if i == page_number
           li.current.unavailable
@@ -16,4 +18,6 @@
             = link_to "#{i}", p && p.url
       - if next_page
         li class="arrow#{next_page.nil? ? ' unavailable' : ''}"
-          = link_to 'Next »', next_page.url
+          a href=next_page.url
+            | Next 
+            i.fa.fa-step-forward

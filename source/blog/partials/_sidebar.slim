@@ -1,5 +1,6 @@
 h5
-  | Recent Articles
+  i.fa.fa-level-up
+  |  Recent Articles
 ul.no-bullet
   - blog.articles[0...10].each do |article|
     li
@@ -7,7 +8,8 @@ ul.no-bullet
       span
         = article.date.strftime(' %b %e')
 h5
-  | By Year
+  i.fa.fa-calendar
+  |  By Year
 ul.no-bullet
   - (blog.articles.group_by{ |a| a.date.year }).each do |year, articles|
     li
@@ -16,7 +18,8 @@ ul.no-bullet
       = articles.size
       | )
 h5
-  | Tags
+  i.fa.fa-tags
+  |  Tags
 ul.no-bullet
   - blog.tags.each do |tag, articles|
     li

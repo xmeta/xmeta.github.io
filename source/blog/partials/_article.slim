@@ -21,15 +21,17 @@ article.panel
       ul.inline-list
         - article.tags.each do |tag|
           li.tag
-            = link_to tag, tag_path(tag)
+            a href=tag_path(tag)
+              i.fa.fa-tag
+              = tag
   - unless digest
     - if article.previous_article or article.next_article
       ul.read_next
         li
           - if article.previous_article
-            i.fa.fa-caret-left
+            i.fa.fa-step-backward
             = link_to article.previous_article.title, article.previous_article.url
         li
           - if article.next_article
               = link_to article.next_article.title, article.next_article.url
-              i.fa.fa-caret-right
+              i.fa.fa-step-forward

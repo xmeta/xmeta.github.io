@@ -5,7 +5,7 @@ html.no-js[lang="en"]
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
       = data.page.title || data.site.name
-    = stylesheet_link_tag "main"
+    = stylesheet_link_tag "main", "headroom"
     = javascript_include_tag  "modernizr"
     = favicon_tag 'favicon.png'
     - unless current_page.data.head.nil?
@@ -18,9 +18,11 @@ html.no-js[lang="en"]
       - for p in current_page.data.beginbody
         = partial "/partials/#{p}"
     = yield
-    = javascript_include_tag "foundation"
+    = javascript_include_tag "foundation", "headroom"
     - unless current_page.data.endbody.nil?
       - for p in current_page.data.endbody
         = partial "/partials/#{p}"
     - if content_for?(:end_body)
       = yield_content :end_body
+javascript:
+ $(function(){ $(".headroom").headroom(); });

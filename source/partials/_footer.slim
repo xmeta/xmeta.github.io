@@ -5,8 +5,3 @@ footer.row
       .large-6.columns
         p
           | © #{data.site.first_publication} #{data.site.author}
-      .large-6.columns
-        ul.inline-list.right
-          - data.footer_links.each do |item|
-            li
-              = link_to item.title, item.link

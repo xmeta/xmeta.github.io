@@ -4,20 +4,29 @@
       ul.title-area
         li.name
           h1
-            a href="/"
+            a href="/#{I18n.locale}"
               i.fa.fa-flag.fa-fw
               = data.site.name
         li.toggle-topbar.menu-icon
           a href="#"
       section.top-bar-section
         ul.left
-          - data.main_menu.each do |item|
             li
-              = link_to item.title, item.link
+              = link_to I18n.t(:blog), "/blog"
+            li
+              = link_to I18n.t(:contact), "/#{I18n.locale}/contact"
         ul.right
           li.search
             form
               input type="search"
           li.has-button
             a.small.button href="#"
-              | Search
+              = I18n.t(:search)
+          li.has-dropdown
+            a href="#"
+              i.fa.fa-globe
+            ul.dropdown
+              li
+                a href="/en" English
+                a href="/ja" 日本語
+                a href="/zh-TW" 繁体中文

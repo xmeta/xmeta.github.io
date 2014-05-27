@@ -1,0 +1,74 @@
+= partial '/partials/header'
+.row
+  .large-12.columns
+    .hide-for-small
+      #featured
+        ul[data-orbit]
+          li
+            = image_tag lorem.image('1000x400', :text => 'Slide Image 1'), :alt => "slide image"
+            .orbit-caption
+              | Here goes a caption
+          li
+            = image_tag lorem.image('1000x400', :text => 'Slide Image 2'), :alt => "slide image"
+            .orbit-caption
+              | Here goes another caption
+          li
+            = image_tag lorem.image('1000x400', :text => 'Slide Image 3'), :alt => "slide image"
+            .orbit-caption
+              | Yet another caption
+    .row
+      .small-12.show-for-small
+        br
+        = image_tag "http://placehold.it/1000x600&text=For Small Screens"
+br
+.row
+  .large-12.columns
+    .row
+      .large-3.small-6.columns
+        = image_tag lorem.image('250x250', :text => 'Thumbnail'), :alt => "thumbnail"
+        h6.panel
+          | Description
+      .large-3.small-6.columns
+        = image_tag lorem.image('250x250', :text => 'Thumbnail'), :alt => "thumbnail"
+        h6.panel
+          | Description
+      .large-3.small-6.columns
+        = image_tag lorem.image('250x250', :text => 'Thumbnail'), :alt => "thumbnail"
+        h6.panel
+          | Description
+      .large-3.small-6.columns
+        = image_tag lorem.image('250x250', :text => 'Thumbnail'), :alt => "thumbnail"
+        h6.panel
+          | Description
+.row
+  .large-12.columns
+    .row
+      .large-8.columns
+        .panel.radius
+          .row
+            .large-6.small-6.columns
+              h4
+                | Header
+              hr
+              h5.subheader
+                = lorem.words 20
+              .show-for-small[style="text-align: center;"]
+                a.small.radius.button[href="#"]
+                  | Call To Action!
+                br
+                a.small.radius.button[href="#"]
+                  | Call To Action!
+            .large-6.small-6.columns
+              p
+                = lorem.paragraph
+      .large-4.columns.hide-for-small
+        h4
+          | Get In Touch!
+        hr
+        a.large.button.expand[href="#"]
+          i.fa.fa-hand-o-right
+          |  Call To Action! 
+        a.large.button.expand[href="#"]
+          i.fa.fa-quote-left
+          |  Call To Action! 
+= partial '/partials/footer'

@@ -110,3 +110,5 @@ page "/404.html", :directory_index => false
 activate :syntax, :line_numbers => true
 
 activate :livereload
+
+activate :i18n, :mount_at_root => :false

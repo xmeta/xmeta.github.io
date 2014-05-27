@@ -17,10 +17,14 @@
               = link_to I18n.t(:contact), "/#{I18n.locale}/contact"
         ul.right
           li.search
-            form
-              input type="search"
+            form#search_form action="http://www.google.co.jp/search"  method="get" name="search_form"
+              input type="search" name="q"
+              input type="hidden" name="hl" value="#{I18n.locale}"
+              input#as_sitesearch type="hidden" name="as_sitesearch"
+              javascript:
+                document.getElementById("as_sitesearch").value = location.hostname;
           li.has-button
-            a.small.button href="#"
+            a.small.button#search_button onclick="document.search_form.submit();"
               = I18n.t(:search)
           li.has-dropdown
             a href="#"
